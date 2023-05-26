@@ -1,0 +1,112 @@
+body {
+    background-color: beige;
+}
+
+
+.title {
+    text-align: center;
+    color: black;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+
+}
+
+
+.question {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+
+.question h2 {
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.question p {
+    font-size: 36px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+
+.hidden {
+    display: none;
+}
+
+
+.question button {
+    background-color: green;
+    border: none;
+    color: beige;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 6px;
+    margin-top: 20px;
+
+
+}
+
+
+.question button:hover {
+    transition: ease-in 0.1s;
+    background-color: rgb(3, 156, 3);
+}
+
+
+.results {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(197, 197, 173);
+    padding: 20px;
+    border-radius: 4px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(104, 104, 93);
+    font-weight: 700;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 100px;
+    box-shadow: 0 4px 4px rgb(94, 93, 86);
+}
+
+
+.results.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.question input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 2px solid rgb(8, 95, 7);
+    outline: none;
+    transition-duration: 0.3s;
+
+
+}
+
+
+.question input[type="radio"]:checked {
+    background-color: rgb(12, 205, 25);
+}
+
+

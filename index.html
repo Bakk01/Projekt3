@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div class="title">
+        <h1>Quiz Game</h1>
+    </div>
+
+
+    <form>
+
+
+        <div class="question">
+            <h2>Question 1:</h2>
+            <p>What is the capital of France?</p>
+            <input type="radio" name="q1" value="a" checked>a) London<br>
+            <input type="radio" name="q1" value="b">b) Paris<br>
+            <input type="radio" name="q1" value="c">c) Rome<br>
+            <button type="button" onclick="nextQuestion()"> Next Question </button>
+        </div>
+        <div class="question hidden">
+            <h2>Question 2:</h2>
+            <p>What is the largest country in the world by land area?</p>
+            <input type="radio" name="q2" value="a" checked>a) Russia<br>
+            <input type="radio" name="q2" value="b">b) China<br>
+            <input type="radio" name="q2" value="c">c) Canada<br>
+            <button type="button" onclick="nextQuestion()"> Next Question </button>
+        </div>
+        <div class="question hidden">
+            <h2>Question 3:</h2>
+            <p>What is the highest mountain in the world?</p>
+            <input type="radio" name="q3" value="a" checked>a) Mount Kilimanjaro<br>
+            <input type="radio" name="q3" value="b">b) Mount Everest<br>
+            <input type="radio" name="q3" value="c">c) Mount Fuji<br>
+            <button type="button" onclick="checkAnswers()"> Submit </button>
+        </div>
+
+
+        <br>
+    </form>
+
+
+    <div class="results" id="results"></div>
+
+
+    <script>
+        let currentQuestion = 0;
+        function nextQuestion() {
+            console.log(nextQuestion);
+            currentQuestion += 1;
+            let questions = document.querySelectorAll(".question");
+            questions.forEach((question) => question.classList.add("hidden"));
+            questions[currentQuestion].classList.remove("hidden");
+        }
+        function checkAnswers() {
+            let q1 = document.querySelector('input[name="q1"]:checked').value;
+            let q2 = document.querySelector('input[name="q2"]:checked').value;
+            let q3 = document.querySelector('input[name="q3"]:checked').value;
+
+
+            let correctAnswers = 0;
+            if (q1 == "b") {
+                correctAnswers++;
+            }
+            if (q2 == "a") {
+                correctAnswers++;
+            }
+            if (q3 == "b") {
+                correctAnswers++;
+            }
+
+
+            let resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = "You got " + correctAnswers + " out of 3 questions correct!";
+
+
+            resultsDiv.classList.add("show");
+        }
+    </script>
+
+
+
+
+</body>
+
+
+</html>
